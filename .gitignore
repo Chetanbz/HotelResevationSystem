@@ -1,0 +1,7 @@
+.gradle/
+.idea/
+gradle/
+biuld.gradle
+gradlew/
+gradlew
+settings.gradle
