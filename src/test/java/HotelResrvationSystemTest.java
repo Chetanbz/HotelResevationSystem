@@ -4,11 +4,11 @@ import org.junit.Test;
 
 public class HotelResrvationSystemTest {
     @Test
-    public void addedHotelInHotelReservationSystem_() {
+    public void addedHotelInHotelReservationSystemShouldGiveLengthOfList() {
         HotelReservationSystem hotelReservation = new HotelReservationSystem();
             hotelReservation.addHotelForRegular();
             int size = hotelReservation.size();
             Assert.assertEquals(size,3);
-            
+
     }
 }

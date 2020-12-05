@@ -9,6 +9,7 @@ public class HotelReservationSystem {
         System.out.println("Welcome to Reservation System");
         HotelReservationSystem hotelReservation = new HotelReservationSystem();
         hotelReservation.addHotelForRegular();
+        hotelReservation.printEntry();
 
 
     }
