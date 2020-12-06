@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 public class HotelReservationSystem {
     public static List<Hotel> hotelReservationList = new ArrayList<>();
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Reservation System");
         HotelReservationSystem hotelReservation = new HotelReservationSystem();
         hotelReservation.addHotelForRegular();
@@ -22,7 +23,19 @@ public class HotelReservationSystem {
         myList = hotelReservationList.stream().sorted(Comparator.comparing(Hotel::getTotalPrize))
                 .collect(Collectors.toList());
         //System.out.println(myList);
-        hotelReservation.cheapHotel(myList);
+        System.out.println("What you want \n Press 1. Find cheapest best rated hotel \n Press 2 Find Best rated hotel");
+        switch (sc.nextInt()){
+            case(1):{
+                hotelReservation.cheapHotel(myList);
+                break;
+            }
+            case(2):{
+                Hotel hotel = hotelReservationList.stream().sorted(Comparator.comparing(Hotel::getRating))
+                        .collect(Collectors.toList()).get(2);
+                System.out.println(hotel.getHotelName() + " & " + hotel.getTotalPrize());
+                break;
+            }
+        }
 
     }
     public  void calculateTotalPrize(int [] days){
