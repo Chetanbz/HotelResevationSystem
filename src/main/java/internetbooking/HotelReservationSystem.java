@@ -14,7 +14,17 @@ public class HotelReservationSystem {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Reservation System");
         HotelReservationSystem hotelReservation = new HotelReservationSystem();
-        hotelReservation.addHotelForRegular();
+        System.out.println("Specify customer type \nPress 1. Regular customer \nPress 2 Reward customer");
+        int num = sc.nextInt();
+        if(num ==1){
+            hotelReservation.addHotelForRegular();
+        }
+        else if(num ==2){
+            hotelReservation.addHotelForReward();
+        }
+        else {
+            System.out.println("Incorrect number type");
+        }
         //hotelReservation.printEntry();
         int [] days = inputDate();
         hotelReservation.calculateTotalPrize( days);
@@ -23,7 +33,7 @@ public class HotelReservationSystem {
         myList = hotelReservationList.stream().sorted(Comparator.comparing(Hotel::getTotalPrize))
                 .collect(Collectors.toList());
         //System.out.println(myList);
-        System.out.println("What you want \n Press 1. Find cheapest best rated hotel \n Press 2 Find Best rated hotel");
+        System.out.println("What you want \nPress 1. Find cheapest best rated hotel \nPress 2 Find Best rated hotel");
         switch (sc.nextInt()){
             case(1):{
                 hotelReservation.cheapHotel(myList);
@@ -59,9 +69,17 @@ public class HotelReservationSystem {
 
 
     public void addHotelForRegular(){
-        Hotel leakWood = new Hotel("LeakWood",110,50,3);
+        Hotel leakWood = new Hotel("LeakWood",110,90,3);
+        Hotel bridgeWood = new Hotel("BridgeWood",160,60,4);
+        Hotel ridgeWood = new Hotel("RidgeWood",220,150,5);
+        hotelReservationList.add(leakWood);
+        hotelReservationList.add(bridgeWood);
+        hotelReservationList.add(ridgeWood);
+    }
+    public void addHotelForReward(){
+        Hotel leakWood = new Hotel("LeakWood",80,80,3);
         Hotel bridgeWood = new Hotel("BridgeWood",110,50,4);
-        Hotel ridgeWood = new Hotel("RidgeWood",220,60,5);
+        Hotel ridgeWood = new Hotel("RidgeWood",100,40,5);
         hotelReservationList.add(leakWood);
         hotelReservationList.add(bridgeWood);
         hotelReservationList.add(ridgeWood);
