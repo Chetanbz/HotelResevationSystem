@@ -42,9 +42,9 @@ public class HotelReservationSystem {
 
 
     public void addHotelForRegular(){
-        Hotel leakWood = new Hotel("LeakWood",110,90);
-        Hotel bridgeWood = new Hotel("BridgeWood",110,50);
-        Hotel ridgeWood = new Hotel("RidgeWood",220,60);
+        Hotel leakWood = new Hotel("LeakWood",110,90,3);
+        Hotel bridgeWood = new Hotel("BridgeWood",110,50,4);
+        Hotel ridgeWood = new Hotel("RidgeWood",220,60,5);
         hotelReservationList.add(leakWood);
         hotelReservationList.add(bridgeWood);
         hotelReservationList.add(ridgeWood);
