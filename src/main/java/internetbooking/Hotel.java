@@ -20,6 +20,7 @@ public class Hotel {
         this.hotelName = hotelName;
         this.weekDayPrize = weekDayPrize;
         this.weekendPrize = weekendPrize;
+        this.rating = rating;
     }
 
     public String getHotelName() {

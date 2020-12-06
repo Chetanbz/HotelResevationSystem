@@ -31,18 +31,22 @@ public class HotelReservationSystem {
         }
     }
     public void cheapHotel(List<Hotel> myList){
+        String str ="";
+        int rating = myList.get(0).getRating();
         int min = myList.get(0).getTotalPrize();
         for (Hotel i :myList) {
             if (min == i.getTotalPrize()) {
-                System.out.print(i.getHotelName() + " and ");
+                if(rating <=i.getRating()){
+                    str = i.getHotelName() + ", Rating of " + i.getRating();
+                }
             }
         }
-        System.out.println("with total rate of " + min );
+        System.out.println(str + ", with total rate of " + min );
     }
 
 
     public void addHotelForRegular(){
-        Hotel leakWood = new Hotel("LeakWood",110,90,3);
+        Hotel leakWood = new Hotel("LeakWood",110,50,3);
         Hotel bridgeWood = new Hotel("BridgeWood",110,50,4);
         Hotel ridgeWood = new Hotel("RidgeWood",220,60,5);
         hotelReservationList.add(leakWood);
